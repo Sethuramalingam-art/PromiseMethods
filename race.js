@@ -62,3 +62,15 @@ Promise.race([promise4, promise5, promise6])
   .catch((error) => {
     console.log(error);
   });
+
+function x() {
+  console.log("1");
+  setTimeout(() => {
+    console.log("2");
+  }, 0);
+  const promis = new Promise((resolve, reject) => resolve("3")).then((res) => {
+    console.log(res);
+  });
+}
+
+x();
